@@ -1,0 +1,349 @@
+/*
+  Coding from Life – Sketch 2: fluid layout
+
+  For sketch 2 you'll be positioning elements relative to a fluid container. This
+  means you'll need to use percentages when positioning and sizingelements within
+  your frame.
+*/
+
+
+body {
+  background-color: black;
+}
+
+.frame {
+  width: 95vw;
+  height: 57vw;
+  background: white;
+  margin: 2.5vw auto;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.table {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  background-color: beige;
+  bottom: 0;
+  right: 0;
+}
+
+.burst-12 {
+  width: 600px;
+  height: 600px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  background: green;
+  z-index: 1;
+  top: 125px;
+  left: 709px;
+  filter: blur(1px);
+  background-image: radial-gradient(white 10%, transparent 20%),
+     radial-gradient(#fafafa 10%, transparent 20%);
+  background-size: 100px 100px;
+}
+
+.burst-12::before, .burst-12::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 600px;
+  width: 600px;
+  background: green;
+  z-index: 1;
+  background-image: radial-gradient(white 10%, transparent 20%),
+     radial-gradient(#fafafa 10%, transparent 20%);
+  background-size: 100px 100px;
+}
+
+.burst-12::before {
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.burst-12::after {
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.container {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(35deg);
+  right: -1140px;
+  bottom: -83px;
+}
+.leaf {
+  position: absolute;
+  width: 30px;
+  height: 100px;
+  bottom: -151px;
+  left: calc(255%% - 15px);
+  transition: all 0.2s ease;
+}
+.leaf:hover {
+  width: 34px;
+  left: calc(50% - 17px);
+}
+.leaf:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to bottom, #006600 0%, #33cc33 86%);
+  border-radius: 15px 0 0 15px / 50px 0 0 50px;
+}
+.leaf:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to bottom, #006600 0%, #33cc33 86%);
+  border-radius: 0 15px 15px 0 / 0 50px 50px 0;
+}
+.leaf:nth-child(1) {
+  transform-origin: 0% 150%;
+  transform: rotate(-90deg);
+}
+.leaf:nth-child(2) {
+  transform-origin: 0% 150%;
+  transform: rotate(-45deg);
+}
+.leaf:nth-child(3) {
+  transform-origin: 100% 150%;
+  transform: rotate(45deg);
+}
+.leaf:nth-child(5) {
+  transform-origin: 100% 150%;
+  transform: rotate(90deg);
+}
+.container2 {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(220deg);
+  right: -302px;
+  bottom: -400px;
+}
+.leaf2 {
+  position: absolute;
+  width: 30px;
+  height: 100px;
+  bottom: -151px;
+  left: calc(255%% - 15px);
+  transition: all 0.2s ease;
+}
+.leaf2:hover {
+  width: 34px;
+  left: calc(50% - 17px);
+}
+.leaf2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to bottom, #006600 0%, #33cc33 86%);
+  border-radius: 15px 0 0 15px / 50px 0 0 50px;
+}
+.leaf2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to bottom, #006600 0%, #33cc33 86%);
+  border-radius: 0 15px 15px 0 / 0 50px 50px 0;
+}
+.leaf2:nth-child(1) {
+  transform-origin: 0% 150%;
+  transform: rotate(-90deg);
+}
+.leaf2:nth-child(2) {
+  transform-origin: 0% 150%;
+  transform: rotate(-45deg);
+}
+.leaf2:nth-child(3) {
+  transform-origin: 100% 150%;
+  transform: rotate(45deg);
+}
+.leaf2:nth-child(5) {
+  transform-origin: 100% 150%;
+  transform: rotate(90deg);
+}
+.containerR {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(220deg);
+  right: -599px;
+  bottom: 276px;
+}
+.rose {
+    width: 130px;
+    height: 130px;
+    margin-left: 55px;
+    margin-top: 82px;
+    background-image: radial-gradient(circle at center center,transparent 69.6%,red 69.9%,red 70.6%,transparent 70.9%),radial-gradient(circle at center center,transparent 69.6%,red 69.9%,red 70.6%,transparent 70.9%),radial-gradient(circle at center center,transparent 69.6%,red 69.9%,red 70.6%,transparent 70.9%);
+    background-position: 50% -65px,-65px 50%,-65px -65px;
+    background-size: 100% 100%;
+    position: static;
+    background-color: pink;
+    top: 200px;
+    right: 509px;
+    z-index: 2;
+}
+.rose::before, .rose::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.rose::before {
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.rose::after {
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+.containerR2 {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  z-index: 2;
+  transform: rotate(270deg);
+  right: -763px;
+  bottom: 475px;
+}
+.rose2 {
+    width: 130px;
+    height: 130px;
+    margin-left: 55px;
+    margin-top: 82px;
+    background-image: radial-gradient(circle at center center,transparent 69.6%,pink 69.9%,pink 70.6%,transparent 70.9%),radial-gradient(circle at center center,transparent 69.6%,pink 69.9%,pink 70.6%,transparent 70.9%),radial-gradient(circle at center center,transparent 69.6%,pink 69.9%,pink 70.6%,transparent 70.9%);
+    background-position: 50% -65px,-65px 50%,-65px -65px;
+    background-size: 100% 100%;
+    position: static;
+    background-color: red;
+    top: 200px;
+    right: 509px;
+    z-index: 2;
+}
+.rose2::before, .rose2::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.rose2::before {
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.rose2::after {
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+.containerR3 {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(308deg);
+  right: -901px;
+  bottom: 632px;
+}
+.rose3 {
+    width: 130px;
+    height: 130px;
+    margin-left: 55px;
+    margin-top: 82px;
+    background-image: radial-gradient(circle at center center,transparent 69.6%,red 69.9%,red 70.6%,transparent 70.9%),radial-gradient(circle at center center,transparent 69.6%,red 69.9%,red 70.6%,transparent 70.9%),radial-gradient(circle at center center,transparent 69.6%,red 69.9%,red 70.6%,transparent 70.9%);
+    background-position: 50% -65px,-65px 50%,-65px -65px;
+    background-size: 100% 100%;
+    position: static;
+    background-color: pink;
+    top: 200px;
+    right: 509px;
+    z-index: 2;
+}
+.rose3::before, .rose3::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.rose3::before {
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.rose3::after {
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+/*.flower {
+  -moz-transform: rotate(15deg);
+  position: absolute;
+  display: none;
+  z-index: 2;
+}
+ 
+.flower div{
+   width : 60%; 
+   height : 60%; 
+   margin : 5px;
+   float : left;
+   z-index: 2;  
+   }
+.flower .center{
+   width: 60%;
+   height: 60%;
+   background: -moz-radial-gradient(#C0AB16, #FFFF33, #1E90FF);
+   position: absolute;
+   top: 32%;
+   left:32%;
+   border-radius: 50px;
+   }
+.flower .tl{
+     background: -moz-linear-gradient(-45deg, #A09BFB 40%, #DBE2FB 90%) ;
+   border-radius: 30px 15px 0px 15px;
+   }
+.flower .tr{
+     background: -moz-linear-gradient(225deg, #A09BFB 40%, #DBE2FB 90%) ;
+   border-radius: 15px 30px 15px 0px;
+   }
+.flower .bl{
+     background: -moz-linear-gradient(45deg, #A09BFB 40%, #DBE2FB 90%) ;
+   border-radius: 15px 0px 15px 30px;
+   }
+.flower .br{
+     background: -moz-linear-gradient(135deg, #A09BFB 40%, #DBE2FB 90%) ;
+   border-radius: 0px 15px 30px 15px;
+   }
+
+
+/* Your CSS goes here */
